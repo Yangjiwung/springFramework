@@ -6,5 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ToString
 public class SampleDAO {
 
-    @Autowired SampleDAO sampleDAO;
+    @Autowired
+    private SampleDAO sampleDAO;
 }

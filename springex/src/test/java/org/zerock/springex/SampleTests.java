@@ -1,6 +1,5 @@
 package org.zerock.springex;
 
-import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,7 @@ import org.zerock.springex.sample.SampleService;
 
 @Log4j2
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/root-context.xml")
+@ContextConfiguration(locations = "file:springex/src/main/webapp/WEB-INF/root-context.xml")
 public class SampleTests {
 
     @Autowired
