@@ -9,17 +9,34 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.zerock.springex.sample.SampleService;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+
 @Log4j2
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations = "file:springex/src/main/webapp/WEB-INF/root-context.xml")
+@ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/root-context.xml")
 public class SampleTests {
 
     @Autowired
     private SampleService service;
+
+    @Autowired
+    private DataSource dataSource;
 
     @Test
     public void testService1(){
         log.info(service);
         Assertions.assertNotNull(service);
     }
+
+    @Test
+    public void testConnection() throws Exception{
+        Connection connection =dataSource.getConnection();
+        log.info(connection);
+        Assertions.assertNotNull(connection);
+
+        connection.close();
+    }
+
+
 }

@@ -2,10 +2,8 @@ package org.zerock.springex.sample;
 
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-@ToString
-public class SampleDAO {
+public interface SampleDAO {
 
-    @Autowired
-    private SampleDAO sampleDAO;
 }
